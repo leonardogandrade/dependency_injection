@@ -1,7 +1,8 @@
 const server = require('./server');
 const repository = require('../src/models/user-model');
+const { dbConnect } = require('./db/database');
+
 const PORT = process.env.PORT;
-const { dbConnect } = require('../src/db/database');
 
 // Database connection
 dbConnect();

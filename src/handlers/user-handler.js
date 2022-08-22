@@ -16,4 +16,16 @@ module.exports = (app, repo) => {
             });
         }
     });
+    app.get('/user', async (req, res) => {
+        const filter = req.body;
+        result = await repository.findByName(repo, filter);
+
+        if (result) {
+            res.status(200).json(result);
+        } else {
+            res.status(400).json({
+                'msg': 'User doens\'t exist.'
+            });
+        }
+    });
 };
