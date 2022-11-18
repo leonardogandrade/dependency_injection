@@ -1,11 +1,12 @@
 const express = require('express');
+const routes = require('./routes')
+const app = express();
 
 const server = (repo) => {
-    const app = express();
     app.use(express.json());
 
     //Routes
-    require('./routes')(app, repo);
+    routes(app, repo);
 
     return app;
 };
